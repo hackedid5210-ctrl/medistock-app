@@ -1,0 +1,17 @@
+{
+  "name": "MediStock Pro",
+  "short_name": "MediStock",
+  "description": "Pharmacy Inventory & Sales Management System",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a1929",
+  "theme_color": "#1565c0",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
