@@ -1015,6 +1015,23 @@ function Settings({settings,setSettings,user}){
         ce('div',{className:'fg'},ce('label',null,'Drug License Number'),ce('input',{value:f.license,onChange:set('license')})),
         ce('div',{className:'fg'},ce('label',null,'Currency Symbol'),ce('input',{value:f.currency,onChange:set('currency')}))
       )
+    ),
+    ce('div',{className:'card',style:{marginTop:14,borderColor:'var(--red)'}},
+      ce('div',{className:'st',style:{marginBottom:14,color:'var(--red)'}},'Danger Zone'),
+      ce('p',{style:{fontSize:13,color:'var(--text2)',marginBottom:14}},'This action will permanently delete all inventory, sales, purchases, suppliers, and customers. This will give you a fresh start. This action cannot be undone.'),
+      ce('button',{className:'btn btn-danger',onClick:()=>{
+        if(confirm('Are you absolutely sure you want to delete all shop data? This cannot be undone!')){
+          lsSet('meds',[]);
+          lsSet('sales',[]);
+          lsSet('purchases',[]);
+          lsSet('returns',[]);
+          lsSet('suppliers',[]);
+          lsSet('customers',[]);
+          lsSet('activity',[]);
+          lsSet('nextIds',{med:1,sale:1,purchase:1});
+          window.location.reload();
+        }
+      }},'🗑️ Factory Reset Shop Data')
     )
   );
 }
